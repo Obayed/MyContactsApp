@@ -1,7 +1,5 @@
-
-<!DOCTYPE html>
-<html>
-
+<!DOCTYPE HTML>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,96 +11,195 @@
     <script src="js/index.js"></script>
 </head>
 
-
 <body>
+<div data-role="page" id="ouHome">
+    <header data-role="header" data-theme="a" data-position="fixed">
+        <h1>OUContactsAPP</h1>
+        <div data-role="navbar">
+		<ul>
+			<li><a href="#ouHome" data-icon="home" data-theme="d" class="ui-btn-active ui-state-persist">Home</a></li>
+			<li><a href="#ouAddFeedback" data-icon="star" data-theme="d">Add</a></li>
+            <li><a href="#ouViewFeedback" data-icon="grid" data-theme="d">Reviews</a></li>
+			<li><a href="#ouSettings" data-icon="gear" data-theme="d">Settings</a></li>
+			</ul>
+		</div>
 
-<!-- Start of first page: #one -->
-<div data-role="page" id="one">
+		</header>
+		<h1>aullah-cc's Contacts App</h1>
+            <section data-role="content">
+        <p>Welcome to the aullah-cc's Feedback A1 app, a prototype designed for mobile programming class. This is the first iteration of the app to keep track of different places you visited along with your reviews.</p>
+        <img src="images/OU-Icon.png" alt="Avengers" width="260" max-width="100">
 
-	<div data-role="header">
-		<h1>Multi-page</h1>
-	</div><!-- /header -->
+       	<p>Please feel free to contact me if you have any suggestions!</p>
 
-	<div data-role="content" >
-		<h2>One</h2>
+		<a href="tel:5197458276" rel="external" data-role="button" data-icon="plus">
+        	<p>Call: 519.748.5220</p>
+        </a>
+		<a href="mailto:aullah-cc@conestogac.on.ca" rel="external" data-role="button" data-icon="plus">
+        	<p>aullah-cc@conestogac.on.ca</p>
+        </a>
+		<h3>LinkedIn:</h3>
 
-		<p>I have an id of "one" on my page container. I'm first in the source order so I'm shown when the page loads.</p>
+		<a href="http://ca.linkedin.com/pub/obayed-ullah/60/a6/b94" rel="external" data-role="button" target="_blank" data-icon="plus">
+        	<p>Obayed Ullah</p>
+        </a>
+    </section>
 
-		<p>This is a multi-page boilerplate template that you can copy to build you first jQuery Mobile page. This template contains multiple "page" containers inside, unlike a <a href="page-template.html"> single page template</a> that has just one page within it.</p>
-		<p>Just view the source and copy the code to get started. All the CSS and JS is linked to the jQuery CDN versions so this is super easy to set up. Remember to include a meta viewport tag in the head to set the zoom level.</p>
-		<p>You link to internal pages by referring to the ID of the page you want to show. For example, to <a href="#two" >link</a> to the page with an ID of "two", my link would have a <code>href="#two"</code> in the code.</p>
+    <footer data-role="footer" data-position="fixed">
+        <h4>&copy; 2014</h4>
+    </footer>
+</div>
 
-		<h3>Show internal pages:</h3>
-		<p><a href="#two" data-role="button">Show page "two"</a></p>
-        <p><a href="#two" data-role="button">Enter data on page 4</a></p>
-		<p><a href="#popup"data-role="button" data-rel="dialog" data-transition="pop">Show page "popup" (as a dialog)</a></p>
-	</div><!-- /content -->
+<div data-role="page" id="ouAddFeedback">
+    <header data-role="header" data-theme="a" data-position="fixed">
+        <h1>Add a feedback</h1>
+        <div data-role="navbar">
+		<ul>
+			<li><a href="#ouHome" data-icon="home" data-theme="d">Home</a></li>
+			<li><a href="#ouAddFeedback" data-icon="star" data-theme="d" class="ui-btn-active ui-state-persist">Add</a></li>
+            <li><a href="#ouViewFeedback" data-icon="grid" data-theme="d">Reviews</a></li>
+			<li><a href="#ouSettings" data-icon="gear" data-theme="d">Settings</a></li>
+			</ul>
+	</div>
+    </header>
 
-	<div data-role="footer" data-theme="d">
-		<h4>Page Footer</h4>
-	</div><!-- /footer -->
-</div><!-- /page one -->
+    <section data-role="content">
+    	<div class="page" data-role="content">
+		<form id="manage-form" data-ajax="false" onsubmit="handleForm(); return false;">
+
+					<label for="wine_name">Business Name:</label>
+					<input type="text" class="required" name="wine_name" id="wine_name" data-mini="true" />
+
+					<label for="winery_name">Reviewer Email:</label>
+					<input type="text" class="required" name="winery_name" id="winery_name" data-mini="true" />
+
+					<label for="color_id" class="select">Reviewer Comments:</label>
+					<textarea id="color_id"></textarea>
+
+					<label for="wine_abv">Overall Ratings (1-100):</label>
+					<input type="text" class="required" nname="wine_abv" id="wine_abv" data-mini="true" />
+					<a href=# data-role="button" data-inline="true" data-theme="b">Save</a>
+
+					</form>
+
+			</section><!-- /content -->
+
+		<footer data-role="footer" data-position="fixed">
+        <h4>&copy; 2014</h4>
+    </footer>
+</div>
+
+<div data-role="page" id="ouViewFeedback">
+    <header data-role="header" data-theme="a" data-position="fixed">
+        <h1>List of reviews:</h1>
+        <div data-role="navbar">
+		<ul>
+			<li><a href="#ouHome" data-icon="home" data-theme="d">Home</a></li>
+			<li><a href="#ouAddFeedback" data-icon="star" data-theme="d">Add</a></li>
+            <li><a href="#ouViewFeedback" data-icon="grid" data-theme="d" class="ui-btn-active ui-state-persist">Reviews</a></li>
+			<li><a href="#ouSettings" data-icon="gear" data-theme="d">Settings</a></li>
+			</ul>
+	</div>
+    </header>
+
+    <section data-role="content">
+    	<ul data-role="listview" data-split-icon="info" data-inset="true">
+    	<li>
+                <a href="#ouEditFeedback">
+                    <h4>Business Name: Domino's Pizza</h4>
+                	<p>Receiver Email: m@c.com</p>
+                	<p>Comments:Good Pizza</p>
+                	<p>Overall Ratings 80%</p>
+                </a>
+                </li>
+            <li>
+                <a href="#ouEditFeedback">
+                    <h4>Business Name: Dairy Queen</h4>
+                	<p>Receiver Email: m@c.com</p>
+                	<p>Comments:Good Icecream</p>
+                	<p>Overall Ratings 80%</p>
+                </a>
+                </li>
+                </ul>
+		</section><!-- /content -->
 
 
-<!-- Start of second page: #two -->
-<div data-role="page" id="four" data-theme="a">
 
-	<div data-role="header">
-		<h1>Two</h1>
-	</div><!-- /header -->
+		<footer data-role="footer" data-position="fixed">
+        <h4>&copy; 2014</h4>
+    </footer>
+</div>
 
-	<div data-role="content" data-theme="a">
-		<h2>Two</h2>
-		<p>I have an id of "two" on my page container. I'm the second page container in this multi-page template.</p>
-		<p>Notice that the theme is different for this page because we've added a few <code>data-theme</code> swatch assigments here to show off how flexible it is. You can add any content or widget to these pages, but we're keeping these simple.</p>
-		<p><a href="#one" data-direction="reverse" data-role="button" data-theme="b">Back to page "one"</a></p>
+<div data-role="page" id="ouEditFeedback">
+    <header data-role="header" data-theme="a" data-position="fixed">
+        <h1>Modify Contacts</h1>
+        <div data-role="navbar">
+		<ul>
+			<li><a href="#ouHome" data-icon="home" data-theme="d">Home</a></li>
+			<li><a href="#ouAddFeedback" data-icon="star" data-theme="d">Add</a></li>
+            <li><a href="#ouViewFeedback" data-icon="grid" data-theme="d" class="ui-btn-active ui-state-persist">Reviews</a></li>
+			<li><a href="#ouSettings" data-icon="gear" data-theme="d">Settings</a></li>
+			</ul>
+	</div>
+    </header>
 
-	</div><!-- /content -->
+    <section data-role="content">
+    	<div class="page" data-role="content">
+		<form id="manage-form" data-ajax="false" onsubmit="handleForm(); return false;">
 
-	<div data-role="footer">
-		<h4>Page Footer</h4>
-	</div><!-- /footer -->
-</div><!-- /page two -->
+					<label for="wine_name">Business Name:</label>
+					<input type="text" class="required" name="wine_name" id="wine_name" value="Domino's Pizza" data-mini="true" />
 
+					<label for="winery_name">Reviewer Email:</label>
+					<input type="text" class="required" name="winery_name" id="winery_name" value="a@c.com" data-mini="true" />
 
-<!-- Start of third page: #popup -->
-<div data-role="page" id="popup">
+					<label for="color_id" class="select">Reviewer Comments:</label>
+					<textarea class="required" name="color_id" id="color_id" data-mini="true">Good Pizza</textarea>
 
-	<div data-role="header" data-theme="e">
-		<h1>Dialog</h1>
-	</div><!-- /header -->
+					<label for="wine_abv">Overall Ratings (1-100):</label>
+					<input type="number" class="required" name="wine_abv" id="wine_abv" value="80" data-mini="true" />
 
-	<div data-role="content" data-theme="d">
-		<h2>Popup</h2>
-		<p>I have an id of "popup" on my page container and only look like a dialog because the link to me had a <code>data-rel="dialog"</code> attribute which gives me this inset look and a <code>data-transition="pop"</code> attribute to change the transition to pop. Without this, I'd be styled as a normal page.</p>
-		<p><a href="#one" data-rel="back" data-role="button" data-inline="true" data-icon="back">Back to page "one"</a></p>
-	</div><!-- /content -->
+				</form>
 
-	<div data-role="footer">
-		<h4>Page Footer</h4>
-	</div><!-- /footer -->
-</div><!-- /page popup -->
+			<!--To group buttons, use a div element with the attributes that follow -->
+			<div data-role="controlgroup" data-type="horizontal">
+				<a href=# data-role="button" data-theme="e" data-inline="true">Cancel</a>
+				<a href=# data-role="button" data-theme="a" data-inline="true">Delete</a>
+				<a href=# data-role="button" data-theme="b" data-inline="true">Update</a>
+			</div>
 
-    <!-- Start of second page: #four -->
-<div data-role="page" id="two" data-theme="a">
+		</section><!-- /content -->
 
-	<div data-role="header">
-		<h1>four</h1>
-	</div><!-- /header -->
+		<footer data-role="footer" data-position="fixed">
+        <h4>&copy; 2014</h4>
+    </footer>
+</div>
 
-	<div data-role="content" data-theme="a">
-        <! This is a data entry form -->
-        <form id="formfour">
-        <input id="email" type="email" required="required" placeholder="enter your email here" />
-        <label for="moreinfo"><input id="moreinfo" type="checkbox" checked="checked" />Receive more info</label>
-        <textarea id="specialinstructions" placeholder="enter any special instruction here"></textarea>
-        <button type="submit">Subscribe Now</button>
-        </form>
-	</div><!-- /content -->
+<div data-role="page" id="ouSettings">
+    <header data-role="header" data-theme="a" data-position="fixed">
+        <h1>Settings</h1>
+        <div data-role="navbar">
+		<ul>
+			<li><a href="#ouHome" data-icon="home" data-theme="d" >Home</a></li>
+			<li><a href="#ouAddFeedback" data-icon="star" data-theme="d">Add</a></li>
+            <li><a href="#ouViewFeedback" data-icon="grid" data-theme="d">Reviews</a></li>
+			<li><a href="#ouSettings" data-icon="gear" data-theme="d" class="ui-btn-active ui-state-persist">Settings</a></li>
+			</ul>
+	</div>
+    </header>
 
-	<div data-role="footer">
-		<h4>Page Footer</h4>
-	</div><!-- /footer -->
-</div><!-- /page four -->
-</body>
-</html>
+    <form id="manage-form" data-ajax="false" onsubmit="handleForm(); return false;">
+
+					<label for="wine_name">Default reviewer email:</label>
+					<input type="text" class="required" name="wine_name" id="wine_name" data-mini="true" />
+					<button data-theme="b">Save</button>
+					<button data-theme="a">Clear Database</button>
+
+					</form>
+
+			</section><!-- /content -->
+
+		<footer data-role="footer" data-position="fixed">
+        <h4>&copy; 2014</h4>
+    </footer>
+</div>
